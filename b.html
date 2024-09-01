@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your existing head content here -->
+    <script>
+        function calculateTotal() {
+            // Get all the elements with class "button-1"
+            var buttons = document.getElementsByClassName("button-1");
+            
+            // Initialize total price
+            var totalPrice = 0;
+
+            // Loop through each button
+            for (var i = 0; i < buttons.length; i++) {
+                // Check if the button is clicked (you can modify this condition as per your actual requirement)
+                if (buttons[i].classList.contains("clicked")) {
+                    // Find the price from the anchor tag's alt attribute
+                    var priceString = buttons[i].previousElementSibling.alt;
+                    // Extract the numeric value from the string
+                    var price = parseFloat(priceString.match(/\d+/)[0]);
+                    // Add the price to the total
+                    totalPrice += price;
+                }
+            }
+
+            // Display the total in an alert (you can replace this with any other method of displaying the total)
+            alert("Total Price: $" + totalPrice.toFixed(2));
+        }
+
+        // Function to handle button click
+        function handleButtonClick(button) {
+            // Toggle the "clicked" class when the button is clicked
+            button.classList.toggle("clicked");
+        }
+    </script>
+</head>
+<body>
+    <!-- Add your existing body content here -->
+
+    <table class="col-8 padding-tblr">
+        <!-- Your table content here -->
+    </table>
+
+    <!-- Add this button to trigger the calculation -->
+    <button onclick="calculateTotal()">Calculate Total</button>
+
+    <script>
+        // Add click event listeners to all buttons with class "button-1"
+        var buttons = document.getElementsByClassName("button-1");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function() {
+                handleButtonClick(this);
+            });
+        }
+    </script>
+</body>
+</html>

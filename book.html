@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Appointment</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    
+        <link href="css/common.css" rel="stylesheet" type="text/css" />
+    
+    
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="main">
+            <header class="header">
+                <div class="container">
+                    <div class="col-12">
+                                                 
+    <div class="col-4 logo">
+        <img src="image/like.png" alt="">
+    </div>
+             
+    
+    
+    
+                        <nav class="col-8 menu  ">
+    
+    
+                            <div class="menu-item-box center "><a href="index.html" class="menu-link">Home</a>
+                            </div>
+                            <div class="menu-item-box center "><a href="apointment.html" class="menu-link">Apointments</a></div>
+                            <div class="menu-item-box center "><a href="doc.html" class="menu-link">Doctor</a></div>
+                            <!-- <div class="menu-item-box center "><a href="#" class="menu-link">Patient</a></div> -->
+                            <!-- <div class="menu-item-box center "><a href="#testimonial" class="menu-link">Testimonial</a></div> -->
+                           
+                            
+                            <div class="menu-item-box center "><i class='bx bxs-capsule bx-tada bx-flip-horizontal' ></i><a href="#contact" class="menu-link">Buy Medicine</a></div>
+                        </nav>
+    
+    
+    
+    
+    
+                    </div>
+                </div>
+            </header> 
+        </div>
+        
+        <section class="contact section-padding color-white">
+            <div class="container">
+                <div class="main-title font-color-m-light">Book Appointment</div>
+                <p class="main-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae nibh nisl.
+                    Cras et mauris eget lorem ultricies ferme ntum a in diam. </p>
+                <form  method="post" enctype="text/plain">
+                    <div class="col-12">
+                        <div class="textbox-set col-12">
+                            <div class="col-6 mb-6 textbox-box padding-tblr"><input type="text" class="textbox"
+                                    placeholder="Name*" id="name" /></div>
+                            <div class="col-6 mb-6 textbox-box padding-tblr"><input type="text" class="textbox"
+                                    placeholder="Phone" id="phone" /></div>
+                             
+                            <div class="col-12 textbox-box padding-tblr"><input type="text" class="textbox"
+                                    placeholder="Email*" id="email" /></div>
+                                    <div class="col-12 textbox-box padding-tblr"><input type="text" class="textbox"
+                                    placeholder="Time*" id="time" /></div>
+                                    <div><label class="col-12 textbox-box padding-tblr" for="doctor">Doctor:</label><br>
+                            
+                                        <select  class="col-12 textbox-box padding-tblr"name="doctor" id="doctor">
+                                        <option value="jason" >jason</option>
+                                        <option value="michal">michal</option>
+                                        <option value="freddy">freddy</option>
+                                    </select>
+                                    </div>
+                                        
+                                        <div class="col-6 mb-6 textbox-box padding-tblr"><input type="text" class="textbox"
+                                            placeholder="Age*" id="age" /></div><br>
+                                            <button onclick="savePatientDetails()" class="button-1">Save</button>
+
+    <script>
+        function savePatientDetails() {
+            // Get input values
+            var patientName = document.getElementById('name').value;
+                                                var phone = document.getElementById('phone').value;
+                                                var email = document.getElementById('email').value;
+                                                var time = document.getElementById('time').value;
+                                                var age = document.getElementById('age').value;
+                                                var doctor= document.getElementById('doctor').value;
+
+            // Create an object to store patient details
+            var patientDetails = {
+                                                     name: patientName,
+                                                    phone:phone,
+                                                    email:email,
+                                                    time:time,
+                                                    age: age,
+                                                     doctor:doctor
+            };
+
+            // Retrieve existing patient details from localStorage
+            var existingPatientDetails = JSON.parse(localStorage.getItem('allPatientDetails')) || [];
+
+            // Add the new patient details to the array
+            existingPatientDetails.push(patientDetails);
+
+            // Convert the array to a JSON string and store it in localStorage
+            localStorage.setItem('allPatientDetails', JSON.stringify(existingPatientDetails));
+
+            // Redirect to the hospital website
+            window.location.href = 'apointment.html';
+            alert("Saved Sucessfully!!")
+        }
+    </script>
+</body>
+</html>

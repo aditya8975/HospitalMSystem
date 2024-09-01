@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Website - Buy Medicine</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="main">
+        <header class="header">
+            <div class="container">
+                <div class="col-12">
+                    <div class="col-4 logo">
+                        <img src="image/like.png" alt="">
+                    </div>
+                    <nav class="col-8 menu">
+                        <div class="menu-item-box center "><a href="index.html" class="menu-link">Home</a></div>
+                        <div class="menu-item-box center "><a href="apointment.html" class="menu-link">Appointments</a></div>
+                        <div class="menu-item-box center "><a href="doc.html" class="menu-link">Doctor</a></div>
+                        <div class="menu-item-box center "><i class='bx bxs-capsule bx-tada bx-flip-horizontal' ></i><a href="#contact" class="menu-link">Buy Medicine</a></div>
+                    </nav>
+                </div>
+            </div>
+        </header> 
+    </div>
+    
+    <br>
+
+    <div class="container">
+        <h2 class="main-title font-color-m-light">Buy Medicine</h2><hr><br>
+        <table class="col-8 padding-tblr" >
+            <tr>
+                <td class="center padding-lr">
+                    <a href="#" id="medicine1" onclick="toggleMedicine('medicine1', 100)">
+                        <img style="height: 200px;border-radius: 40px;" src="image/1 (1).jpg" alt="cipla">
+                        Flozen-AA <p>Prize $ 100</p>
+                    </a> 
+                    <input type="submit" class="button-1" value="Add to Cart"  onclick="toggleMedicine('medicine1', 100)">
+                </td>
+                <td class="center padding-lr">
+                    <a href="#" id="medicine2" onclick="toggleMedicine('medicine2', 250)">
+                        <img style="height: 200px;border-radius: 40px;" src="image/1 (2).jpg" alt="cipla">
+                        MefKind <p>Prize $ 250</p>
+                    </a> 
+                    <input type="submit" class="button-1" value="Add to Cart"  onclick="toggleMedicine('medicine2', 250)">
+                </td>
+                <td class="center padding-lr">
+                    <a href="#" id="medicine3" onclick="toggleMedicine('medicine3', 150)">
+                        <img style="height: 200px;border-radius: 40px;" src="image/1 (3).jpg" alt="cipla">
+                        Odoxil <p>Prize $ 150</p>
+                    </a>
+                    <input type="submit" class="button-1" value="Add to Cart"  onclick="toggleMedicine('medicine3', 150)">
+                </td>
+                <td class="center padding-lr">
+                    <a href="#" id="medicine4" onclick="toggleMedicine('medicine4', 200)">
+                        <img style="height: 200px;border-radius: 40px;" src="image/1 (5).jpg" alt="cipla"><br>
+                        Lovocef <p>Prize $ 200</p>
+                    </a> 
+                    <input type="submit" class="button-1" value="Add to Cart"  onclick="toggleMedicine('medicine4', 200)">
+                </td>
+                <!-- Add more medicine entries as needed -->
+            </tr>
+            <!-- Add more rows as needed -->
+            <tr>
+                <td class="center padding-lr">
+                    <a href="#" id="medicine5" onclick="toggleMedicine('medicine5', 200)">
+                        <img style="height: 200px;border-radius: 40px;" src="image/1 (5).jpg" alt="cipla">
+                        Lovocef <p>Prize $ 200</p>
+                    </a> 
+                    <input type="submit" class="button-1" value="Add to Cart"  onclick="toggleMedicine('medicine5', 200)">
+                </td>
+                <td class="center padding-lr">
+                    <a href="#" id="medicine6" onclick="toggleMedicine('medicine6', 600)">
+                        <img style="height: 200px;border-radius: 40px;" src="image/1(6).jpg" alt="cipla">
+                        MobZox <p>Prize $ 600</p>
+                    </a>
+                    <input type="submit" class="button-1" value="Add to Cart"  onclick="toggleMedicine('medicine6', 600)">
+                </td>
+                <td class="center padding-lr">
+                    <a href="#" id="medicine7" onclick="toggleMedicine('medicine7', 350)">
+                        <img style="height: 200px;border-radius: 40px;" src="image/1(7).webp" alt="cipla">
+                        Allegra <p>Prize $ 350</p>
+                    </a>
+                    <input type="submit" class="button-1" value="Add to Cart"  onclick="toggleMedicine('medicine7', 350)">
+                </td>
+                <td class="center padding-lr">
+                    <a href="#" id="medicine8" onclick="toggleMedicine('medicine1', 800)">
+                        <img style="height: 200px;border-radius: 40px;" src="image/1(8).jpeg" alt="cipla">
+                       MicroDox <p>Prize $ 800</p>
+                    </a>
+                    <input type="submit" class="button-1" value="Add to Cart"  onclick="toggleMedicine('medicine8', 800)">
+                </td>
+                <!-- Add more medicine entries as needed -->
+            </tr>
+           
+        </table>
+
+        <!-- Display total and checkout button -->
+        <div id="checkout-section" class="col-12 center padding-tblr">
+            <p>------------------------------------------------------------</p>
+            <p ><strong>Total: $</strong><span id="total-price">0.00</span></p>
+            <button class="button-1"  onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMedicine(medicineId, price) {
+            // Toggle the "selected" class for the clicked medicine
+            var element = document.getElementById(medicineId);
+            element.classList.toggle("selected");
+
+            // Update total price based on the selected medicine
+            calculateTotal(price);
+        }
+
+        function calculateTotal(price) {
+            // Get the total price element
+            var totalPriceElement = document.getElementById('total-price');
+            
+            // Get the current total price
+            var currentTotal = parseFloat(totalPriceElement.textContent);
+
+            // If the medicine is selected, add its price; otherwise, subtract it
+             if(document.getElementById('medicine1').classList.contains('selected')||document.getElementById('medicine2').classList.contains('selected')||document.getElementById('medicine3').classList.contains('selected')||document.getElementById('medicine4').classList.contains('selected')||document.getElementById('medicine5').classList.contains('selected')||document.getElementById('medicine6').classList.contains('selected')||document.getElementById('medicine7').classList.contains('selected')||document.getElementById('medicine8').classList.contains('selected'))
+            {
+                currentTotal += price;
+            }
+            else{
+                currentTotal -= price;
+            }
+            
+            // Display the updated total price
+            totalPriceElement.textContent = currentTotal.toFixed(2);
+        }
+
+        function checkout() {
+            // Implement your checkout logic here
+            alert("Thank you for your purchase! Total Bill: $" + document.getElementById('total-price').textContent);
+        }
+    </script>
+</body>
+</html>

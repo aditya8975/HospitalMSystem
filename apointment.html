@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Website - Patient Details</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="main">
+        <header class="header">
+            <div class="container">
+                <div class="col-12">
+                                             
+<div class="col-4 logo">
+    <img src="image/like.png" alt="">
+</div>
+         
+
+
+
+                    <nav class="col-8 menu  ">
+
+
+                        <div class="menu-item-box center "><a href="index.html" class="menu-link">Home</a>
+                        </div>
+                        <div class="menu-item-box center "><a href="apointment.html" class="menu-link">Appointments</a></div>
+                        <div class="menu-item-box center "><a href="doc.html" class="menu-link">Doctor</a></div>
+                        <!-- <div class="menu-item-box center "><a href="#" class="menu-link">Patient</a></div> -->
+                        <!-- <div class="menu-item-box center "><a href="#testimonial" class="menu-link">Testimonial</a></div> -->
+                       
+                        
+                        <div class="menu-item-box center "><i class='bx bxs-capsule bx-tada bx-flip-horizontal' ></i><a href="#contact" class="menu-link">Buy Medicine</a></div>
+                    </nav>
+
+
+
+
+
+                </div>
+            </div>
+        </header> 
+    </div>
+    
+        
+    <div id="patientDetailsContainer">
+        <!-- Patient details will be displayed here -->
+    </div>
+
+
+    <script>
+        // Retrieve all patient details from localStorage
+        var allPatientDetails = JSON.parse(localStorage.getItem('allPatientDetails')) || [];
+
+        var patientDetailsContainer = document.getElementById('patientDetailsContainer');
+
+        if (allPatientDetails.length > 0) {
+            // Display patient details on the page
+            patientDetailsContainer.innerHTML = '<br><h2 class="main-title font-color-m-light">All Appointments Details</h2><br/><br/>';
+
+            allPatientDetails.forEach(function(patientDetails, index) {
+                patientDetailsContainer.innerHTML += `
+                  <div class="container">
+                    <hr> <br><br> <h1 class="sub-title font-color-m-light">Appointment ${index + 1}</h1><br>
+                        <p><strong>Name</strong>:${patientDetails.name}</P>
+                               <p><strong> Age</strong>: ${patientDetails.age}</p>
+                                <p><strong>Doctor</strong>: ${patientDetails.doctor}</p>
+                                <p><strong>Phone</strong>:${patientDetails.phone}</p>
+                                <p><strong>email</strong>:${patientDetails.email}</p>
+                                <p><strong>time</strong>: ${patientDetails.time}</p>
+                        
+                                
+                <input type="submit" value="DELETE" class="button-1" onclick='deleteAppointment()'>
+                        </div>
+                   
+                `;
+            });
+        } else {
+            // If there are no patient details, display a message
+            patientDetailsContainer.innerHTML = '<p class="center">No Appointment details available.</p>';
+        }
+        function deleteAppointment(index) {
+            allPatientDetails.splice(index, 1);
+            localStorage.setItem('allPatientDetails', JSON.stringify(allPatientDetails));
+            location.reload(); // Refresh the page to reflect the changes
+        }
+    </script>
+</body>
+</html>
