@@ -1,0 +1,268 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+@media only screen and (min-width: 1024px) {
+  .about-image img,
+  .feature-icon i,
+  .footer-logo img,
+  .footer-menu-box-link,
+  .service i {
+    box-sizing: border-box;
+  }
+  .button-1,
+  .view-template {
+    max-width: 160px;
+    cursor: pointer;
+  }
+
+  .footer-menu-box-link,
+  
+  .menu-item-box,
+  .team-image {
+    vertical-align: middle;
+  }
+  .button-1,
+  
+  .social i,
+  .social-link i {
+    cursor: pointer;
+  }
+  .header {
+    height: 65px;
+    background-color: #fff;
+  }
+  .logo-set {
+    height: 65px;
+    display: table;
+  }
+  /* .logo h1{
+  
+    font-size: 500px;
+  } */
+  .menu {
+    height: 65px;
+    display: table !important;
+  }
+  .menu-item-box {
+    height: 100%;
+    display: table-cell;
+    position: relative;
+  }
+  .menu-link {
+    padding: 15px;
+    color: #313131;
+  }
+  .banner {
+    height: 550px;
+    width: 100%;
+    background-position: center ;
+    background-size: cover;
+    position: relative;
+    filter: blur(3);
+  }
+  .texture {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+  }
+  .banner-box {
+    padding: 34px 0 0;
+    position: relative;
+  }
+  .banner_line1 {
+    font-size: 42px;
+    color: #f5f5f5;
+    letter-spacing: 0.4px;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+  .banner_brief_text {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 0.2px;
+    padding: 30px 0;
+    text-shadow: 1px 1px 1px #333;
+  }
+  .main-content,
+  .main-title {
+    font-weight: 300;
+    text-align: center;
+  }
+  .banner-extra-div {
+    height: 130px;
+    margin-top: -130px;
+  }
+  .mob-menu {
+    display: none;
+  }
+  .about-image img {
+    padding: 0 15px;
+  }
+  .main-title {
+    font-size: 43px;
+    padding: 11px 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  .main-content {
+    padding: 11px 0 50px;
+    font-size: 18px;
+    letter-spacing: 0.7px;
+    word-spacing: 0.2px;
+  }
+  .sub-title {
+    font-size: 24px;
+    padding: 0;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+  .button-2,
+  .team-name,
+  .team-position {
+    text-transform: uppercase;
+  }
+  .content-box {
+    color: #484848;
+    padding: 15px 0;
+    font-weight: 300;
+    line-height: 24px;
+    font-size: 17px;
+    letter-spacing: 0.1px;
+    word-spacing: 0.5px;
+  }
+  
+  .feature-name {
+    color: #233141;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    padding-bottom: 10px;
+  }
+  .feature-content {
+    font-size: 15px;
+    color: #606873;
+    line-height: 23px;
+    font-weight: 300;
+    letter-spacing: 0.4px;
+  }
+  
+  .quickweb-icon-smile {
+    background-color: #048eff;
+  }
+  .service i {
+    font-size: 30px;
+    color: #fff;
+    padding: 18px;
+    background-color: #048eff;
+  }
+  .service i:hover {
+    color: #fff;
+    background-color: #ff0404;
+  }
+
+  .footer-menu-box-link {
+    font-size: 15px;
+    font-weight: 100;
+  }
+  
+  .social-link i {
+    color: #fff;
+    font-size: 15px;
+    background-color: #048eff;
+    padding: 12px;
+    margin-left: 6px;
+  }
+  .social-link i:hover {
+    background-color: #048eff;
+  }
+  .design-by {
+    text-align: right;
+  }
+  .footer {
+    background-color: #141b22;
+  }
+  .footer-logo img {
+    width: 100%;
+    padding-left: 6px;
+  }
+  .footer .bottom-footer {
+    background-color: #161b1f;
+    padding: 45px 0;
+    box-sizing: border-box;
+  }
+  .footer-menu-box-link {
+    display: table-cell;
+    padding: 0 15px;
+    color: #e5e5e5;
+  }
+
+ .logo img{
+  /* font-size: 20px;
+  margin-top: 15px; */
+  height: 30px;
+  margin-top: 15px;
+margin-right: 20px;
+
+ }
+  .social {
+    color: #606873;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .social i {
+    padding: 10px;
+  }
+  .social i:hover.quickweb-icon-facebook,
+  .social i:hover.quickweb-icon-gplus-1,
+  .social i:hover.quickweb-icon-twitter,
+  .social i:hover.quickweb-icon-youtube {
+    color: #fff;
+  }
+  .map {
+    filter: grayscale(1);
+  }
+  .contact-box {
+    padding: 8px;
+    text-align: center;
+  }
+  .contact-icon i {
+    color: #048eff;
+    font-size: 30px;
+  }
+  .contact-title {
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    line-height: 25px;
+  }
+  .textbox {
+    width: 100%;
+    min-height: 50px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+  }
+ 
+  
+  .button-1 {
+    padding: 12px 24px;
+    background-color: #048eff;
+    color: #fff;
+    border-bottom: 2px solid #1300be;
+    margin-top: 34px;
+  }
+  .button-1:hover {
+    background-color: #ff0404;
+  }
+  .button-1 a {
+    color: #ffffff;
+  }
+ 
+}
